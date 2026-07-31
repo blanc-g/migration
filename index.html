@@ -1002,15 +1002,12 @@ function raceChart(which, step) {
     key(T("exit open", "sortie ouverte"), COR, "7 5", 32);
   }
   RACE[which] = panes;
-  /* cap the reveal step by step so the productivity shock is never on screen
-     before the card that announces it. Caps are expressed in generations and
-     converted, so they survive any change to the span of the axis. The line
-     runs one beat behind the prose: the shock card is read while the line is
-     still flat at -1, and the jump is drawn as the reader scrolls off it. */
+  /* Each card owns a stretch of the line rather than a hard ceiling: the line
+     advances continuously with the scroll and has just reached that card's
+     generation as the card leaves the trigger line. Targets are written in
+     generations, so they survive any change to the span of the axis. */
   const gx = g => (g - gens[0]) / (gens[n - 1] - gens[0]);
-  RACE[which + "_cap"] = ({ pre: gx(-3), shock: gx(-1), pop: gx(1.9), draw: 1,
-                            shut: 0, open: gx(4.6), keep: 1 })[step];
-  if (RACE[which + "_cap"] === undefined) RACE[which + "_cap"] = 1;
+  RACE[which + "_targets"] = both ? [0, gx(4.6), 1] : [gx(-3), gx(-1), gx(1.9), 1];
   raceReveal(which, RACE[which + "_f"] || 0);
 
   const notes = {
@@ -1036,8 +1033,6 @@ function raceChart(which, step) {
 function raceReveal(which, frac) {
   RACE[which + "_f"] = frac;
   const panes = RACE[which]; if (!panes) return;
-  const cap = RACE[which + "_cap"];
-  frac = Math.min(frac, cap === undefined ? 1 : cap);
   for (const p of panes) {
     const wpx = p.iw * Math.max(0, Math.min(1, frac));
     p.rect.setAttribute("width", (p.ml + wpx + 2).toFixed(1));
@@ -1051,10 +1046,19 @@ function raceReveal(which, frac) {
   }
 }
 function raceScroll(which) {
-  const box = $(`#scrolly-race${which}`); if (!box) return;
-  const b = box.getBoundingClientRect(), vh = innerHeight;
-  const f = (vh * 0.55 - b.top) / Math.max(1, b.height - vh * 0.45);
-  raceReveal(which, f);
+  const steps = $$(`#steps-race${which} .step`), T = RACE[which + "_targets"];
+  if (!steps.length || !T) return;
+  /* how many cards have crossed the trigger line, as a continuous number:
+     2.4 means the third card is 40% of the way through */
+  const line = innerHeight * 0.5;
+  let pos = 0;
+  for (const s of steps) {
+    const r = s.getBoundingClientRect();
+    pos += Math.max(0, Math.min(1, (line - r.top) / Math.max(1, r.height)));
+  }
+  const i = Math.min(steps.length - 1, Math.floor(pos)), t = Math.min(1, pos - i);
+  const from = i === 0 ? 0 : T[i - 1];
+  raceReveal(which, from + t * (T[i] - from));
 }
 
 /* ============ Part 2 : France against the rest of Europe ============ */
