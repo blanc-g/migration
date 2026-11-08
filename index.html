@@ -437,6 +437,8 @@ footer .fin{font-family:var(--disp);font-weight:600;color:var(--coral);margin-to
 .hedtag{margin:0 0 .8rem;line-height:1.55}
 .hedtag a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
 .hedtag a:hover,.hedtag a:focus-visible{color:var(--coral);border-bottom-color:currentColor}
+
+.ai-credit{font-family:var(--disp);font-size:.78rem;line-height:1.55;color:var(--muted);max-width:760px;margin:.55rem auto 0}.ai-credit strong{font-weight:700}
 </style>
 </head>
 <body data-palette="#8867c0,#cf5220,#cf9a25">
@@ -449,6 +451,7 @@ footer .fin{font-family:var(--disp);font-weight:600;color:var(--coral);margin-to
     <h1 class="title" data-i18n="h_h1">Escaping Malthus<span class="dot">.</span></h1>
     <p class="standfirst" data-i18n="h_stand">Nearly 60 million Europeans left for the Americas during the Age of Mass Migration. We find that <strong>people from larger families were more likely to emigrate</strong>, and use a model to explore how emigration <strong>may have eased population pressure and raised living standards in Europe</strong>.</p>
     <p class="byline" data-i18n="h_by">By <b>Guillaume Blanc</b> (Simon Fraser University) and <b>Romain Wacziarg</b> (UCLA and NBER)</p>
+    <p class="ai-credit" data-i18n="h_ai_credit">AI-assisted public summary, drafted and built by <strong>Claude</strong>, <strong>Codex</strong>, and <strong>Gemini</strong> using the replication data.</p>
     <svg class="hedwave" viewBox="0 0 120 22" aria-hidden="true"><path d="M2 20 Q16 4 30 20 Q44 4 58 20 Q72 4 86 20 Q100 4 114 20" fill="none" stroke="#e8511e" stroke-width="2.4" stroke-linecap="round"/></svg>
   </div>
 </header>
@@ -770,7 +773,7 @@ footer .fin{font-family:var(--disp);font-weight:600;color:var(--coral);margin-to
 
 <footer>
   <div class="fwrap">
-    <div class="cite" data-i18n="f1"><strong>Adapted from</strong> Guillaume Blanc and Romain Wacziarg, “Malthusian Migrations” · reject &amp; resubmit at the <i>Quarterly Journal of Economics</i> · <a href="https://www.guillaumeblanc.com/files/BlancWacziarg_migrations.pdf" target="_blank" rel="noopener">read the paper (PDF) ↗</a><br>AI-generated summary, written and built with <strong>Claude</strong> and <strong>Codex</strong>. It may contain errors; please consult the paper for the definitive account.</div>
+    <div class="cite" data-i18n="f1"><strong>Adapted from</strong> Guillaume Blanc and Romain Wacziarg, “Malthusian Migrations” · reject &amp; resubmit at the <i>Quarterly Journal of Economics</i> · <a href="https://www.guillaumeblanc.com/files/BlancWacziarg_migrations.pdf" target="_blank" rel="noopener">read the paper (PDF) ↗</a></div>
     <div class="cite" data-i18n="f2">Companion pages: <a href="https://french.guillaumeblanc.com" target="_blank" rel="noopener">French</a>, on how classrooms taught a country its language · <a href="https://fertility.guillaumeblanc.com" target="_blank" rel="noopener">Coitus Interruptus</a>, on why French fertility fell a century early.</div>
     <div class="fin" data-i18n="f3">Productivity and migration: over half the century’s gain in the model</div>
   </div>
@@ -792,6 +795,7 @@ const FR_HTML = {
 "tag_fam": "<span>Manifeste 35</span>",
 "h_stand": "Près de 60 millions d’Européens sont partis pour les Amériques à l’époque des migrations de masse. Nous montrons que <strong>les personnes issues de familles plus nombreuses étaient plus susceptibles d’émigrer</strong>, puis utilisons un modèle pour étudier comment l’émigration <strong>a pu alléger la pression démographique et améliorer le niveau de vie en Europe</strong>.",
 "h_by": "Par <b>Guillaume Blanc</b> (Simon Fraser University) et <b>Romain Wacziarg</b> (UCLA et NBER)",
+"h_ai_credit": "Résumé public assisté par l’IA, rédigé et réalisé par <strong>Claude</strong>, <strong>Codex</strong> et <strong>Gemini</strong> à partir des données de réplication.",
 "cap_fam": "<b>Classés par taille, étiquetés par navire.</b> Des arrivants à Ellis Island, chacun portant le numéro du manifeste qui l’a amené. Cette page parle de ceux d’entre eux qui ont quitté leur pays, et des raisons pour lesquelles ils étaient si nombreux au départ.",
 "i1": "En 1798, un pasteur anglais a expliqué pourquoi personne ne s’enrichissait. La production croît lentement&nbsp;; les hommes, vite&nbsp;; si bien que tout gain de production finit par être divisé entre les bouches supplémentaires qu’il nourrit. Thomas Malthus décrivait le monde dans lequel il vivait, et sur ce monde il avait raison&nbsp;: chaque progrès était mangé par la population qu’il créait.",
 "i2": "Ce sur quoi il s’est trompé, c’est la sortie.",
@@ -908,7 +912,7 @@ const FR_HTML = {
 "st6": "<div class=\"n\">6,8</div><div class=\"l\">Association avec le log de la taille familiale après 1825, en points de pourcentage</div>",
 "st7": "<div class=\"n\">4,89&nbsp;<small>pp</small></div><div class=\"l\">Estimation instrumentale&nbsp;: de trois à quatre enfants</div>",
 "st8": "<div class=\"n\">508&nbsp;$</div><div class=\"l\">Gain de revenu par tête associé à la migration dans le modèle</div>",
-"f1": "<strong>D’après</strong> Guillaume Blanc et Romain Wacziarg, «&nbsp;Malthusian Migrations&nbsp;» · rejet &amp; resoumission au <i>Quarterly Journal of Economics</i> · <a href=\"https://www.guillaumeblanc.com/files/BlancWacziarg_migrations.pdf\" target=\"_blank\" rel=\"noopener\">lire l’article (PDF) ↗</a><br>Résumé généré avec l’IA, rédigé et réalisé avec <strong>Claude</strong> et <strong>Codex</strong>. Il peut contenir des erreurs ; veuillez consulter l’article pour la version de référence.",
+"f1": "<strong>D’après</strong> Guillaume Blanc et Romain Wacziarg, «&nbsp;Malthusian Migrations&nbsp;» · rejet &amp; resoumission au <i>Quarterly Journal of Economics</i> · <a href=\"https://www.guillaumeblanc.com/files/BlancWacziarg_migrations.pdf\" target=\"_blank\" rel=\"noopener\">lire l’article (PDF) ↗</a>",
 "f3": "Productivité et migration&nbsp;: plus de la moitié du gain du siècle dans le modèle",
 };
 
