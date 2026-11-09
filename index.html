@@ -144,15 +144,15 @@ input[type=range]{width:100%;accent-color:var(--coral);cursor:ew-resize}
 figure.photo{margin:0;position:relative}
 figure.photo img{display:block;width:100%;height:auto}
 figure.photo .tag{position:absolute;left:-8px;bottom:14px}
-figure.photo figcaption{font-family:var(--frank);font-size:.75rem;line-height:1.55;color:var(--muted);padding-top:.5rem}
-figure.photo figcaption b{color:var(--ink);font-weight:600}
+
+
 .media{display:grid;grid-template-columns:290px 1fr;gap:2.3rem;align-items:center;max-width:800px;margin:2.5rem auto;padding:0 22px}
 .media.rev{grid-template-columns:1fr 290px}
 .introband{max-width:1020px;margin:2.8rem auto .2rem;padding:0 22px}
 .introband figure.photo img{width:100%;display:block;
   height:clamp(190px,27vw,270px);object-fit:cover;object-position:center 42%}
 .introband figure.photo .tag{top:14px;bottom:auto;left:14px}
-.introband figcaption{max-width:760px}
+
 .media.introtxt{grid-template-columns:1fr 190px;max-width:1020px;gap:2.4rem;align-items:center;margin-top:1.6rem}
 .media.introtxt .mport img{height:160px;object-fit:cover;object-position:center 12%}
 .media.introb{grid-template-columns:300px 1fr 175px;max-width:1020px;gap:2.2rem;align-items:center}
@@ -313,7 +313,7 @@ blockquote.pull .who{display:block;margin-top:.8rem;font-style:normal;font-famil
 .honesty p{margin-bottom:.5rem;line-height:1.65}
 .cardplate{float:right;width:116px;margin:.15rem 0 .4rem .8rem}
 .cardplate img{display:block;width:100%}
-.cardplate figcaption{font-family:var(--frank);font-size:.63rem;line-height:1.45;color:var(--muted);padding-top:.3rem}
+
 
 /* ================= tooltip ================= */
 #tip{position:fixed;pointer-events:none;background:var(--cream);color:var(--ink);font-family:var(--frank);
@@ -381,7 +381,7 @@ footer .fin{font-family:var(--disp);font-weight:600;color:var(--coral);margin-to
 .plate3{display:flex;justify-content:center;align-items:center;min-height:clamp(240px,42vh,430px)}
 .srcplate{margin:0;width:calc(var(--pw)*100%);max-width:960px;transition:opacity .35s ease}
 .srcplate img{display:block;width:100%;height:auto;box-shadow:0 10px 34px rgba(20,24,12,.35)}
-.srcplate figcaption{font-family:var(--frank);font-size:.72rem;line-height:1.6;color:var(--cream-mut);padding-top:.6rem}
+
 .duo figure.fig figure.photo{margin-top:.6rem}
 .duo figure.fig figure.photo img{width:100%;height:auto;display:block}
 @media(max-width:640px){.plate3{min-height:180px}.srcplate{width:100%}
@@ -421,8 +421,7 @@ footer .fin{font-family:var(--disp);font-weight:600;color:var(--coral);margin-to
 .crossplate{position:absolute;right:0;top:0;width:min(268px,26%);margin:0;
   opacity:0;transition:opacity .5s ease;pointer-events:none}
 .crossplate img{width:100%;height:auto;display:block;box-shadow:0 8px 26px rgba(20,24,12,.35)}
-.crossplate figcaption{font-family:var(--frank);font-size:.68rem;line-height:1.55;
-  color:var(--cream-mut);padding-top:.45rem}
+
 @media(max-width:900px){.crossplate{display:none}}
 /* a figure needs real air under it before prose resumes */
 .introband{margin-bottom:2.2rem}
@@ -439,6 +438,11 @@ footer .fin{font-family:var(--disp);font-weight:600;color:var(--coral);margin-to
 .hedtag a:hover,.hedtag a:focus-visible{color:var(--coral);border-bottom-color:currentColor}
 
 .ai-credit{font-family:var(--disp);font-size:.78rem;line-height:1.55;color:var(--muted);max-width:760px;margin:.55rem auto 0}.ai-credit strong{font-weight:700}
+
+/* Shared picture-caption style across all three public summaries. */
+figcaption{max-width:760px;margin:0;padding:.5rem 0 0;font:400 .75rem/1.55 var(--frank);letter-spacing:normal;text-align:left;text-transform:none;color:var(--muted)}
+figcaption b,figcaption strong{font-weight:600;color:inherit}
+.srcplate figcaption,.crossplate figcaption{color:var(--cream-mut)}
 </style>
 </head>
 <body data-palette="#8867c0,#cf5220,#cf9a25">
